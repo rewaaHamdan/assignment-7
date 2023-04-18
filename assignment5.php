@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, gender) VALUES (?, ?, ?, ?)");
-	 $stmt->bind_param("ssssi", $name, $email, $hash, $gender,$remember);
+	 $stmt->bind_param("ssss", $name, $email, $hash, $gender);
 
 	  if ($stmt->execute()) {
 		 echo "New record was inserted"."<br>"; 
